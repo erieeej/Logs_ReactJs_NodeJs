@@ -10,7 +10,7 @@ user: "root",
 password: "" , 
 database: "logs"
 });
-// Data Access Layer tends ************.
+// Data Access Layer ends ************.
 
 //  *********** Controller layer starts :
 app.use(cors());
@@ -31,9 +31,8 @@ app.get('/api/get', (req, res) => { // to get info, send to the frontend a json
 
 });
 
-//create
 app.post('/api/insert', (req, res) => {
-    const Name = req.body.Name; //to request smth from the frontend ( req to grab the data from the fte to the bce)
+    const Name = req.body.Name; //to request smth from the frontend ( req to grab the data from the frontend to the backend)
     const Description = req.body.Description;
     const sqlInsert = "INSERT INTO camera_reviews (Name, Description) VALUES (?,?)"
     db.query(sqlInsert, [Name, Description ], (err, result) => {
